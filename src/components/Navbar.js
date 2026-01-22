@@ -23,19 +23,19 @@ const Navbar = ({ scrollToSection, refs }) => {
         </button>
         <ul className={`nav-menu ${mobileOpen ? "active" : ""}`}>
           <li>
-            <a onClick={() => handleNavClick(refs.aboutRef)}>About</a>
+            <a href="#" onClick={() => handleNavClick(refs.aboutRef)}>About</a>
           </li>
           <li>
-            <a onClick={() => handleNavClick(refs.projectsRef)}>Projects</a>
+            <a href="#" onClick={() => handleNavClick(refs.projectsRef)}>Projects</a>
           </li>
           <li>
-            <a onClick={() => handleNavClick(refs.skillsRef)}>Skills</a>
+            <a href="#" onClick={() => handleNavClick(refs.skillsRef)}>Skills</a>
           </li>
           <li>
-            <a onClick={() => handleNavClick(refs.resumeRef)}>Resume</a>
+            <a href="#" onClick={() => handleNavClick(refs.resumeRef)}>Resume</a>
           </li>
           <li>
-            <a onClick={() => handleNavClick(refs.contactRef)}>Contact</a>
+            <a href="#" onClick={() => handleNavClick(refs.contactRef)}>Contact</a>
           </li>
         </ul>
       </div>
