@@ -4,7 +4,8 @@ import "./Navbar.css";
 const Navbar = ({ scrollToSection, refs }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
-  const handleNavClick = (ref) => {
+  const handleNavClick = (ref, e) => {
+    e.preventDefault();       // prevent page reload
     scrollToSection(ref);
     setMobileOpen(false);
   };
@@ -13,29 +14,63 @@ const Navbar = ({ scrollToSection, refs }) => {
     <nav className="navbar">
       <div className="navbar-container">
         <h2 className="logo">Portfolio</h2>
+
+        {/* Hamburger menu */}
         <button
           className={`hamburger ${mobileOpen ? "active" : ""}`}
           onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle menu"
         >
           <span></span>
           <span></span>
           <span></span>
         </button>
+
+        {/* Navigation Links */}
         <ul className={`nav-menu ${mobileOpen ? "active" : ""}`}>
           <li>
-            <a href="#" onClick={() => handleNavClick(refs.aboutRef)}>About</a>
+            <a
+              href="/#about"
+              onClick={(e) => handleNavClick(refs.aboutRef, e)}
+            >
+              About
+            </a>
           </li>
+
           <li>
-            <a href="#" onClick={() => handleNavClick(refs.projectsRef)}>Projects</a>
+            <a
+              href="/#projects"
+              onClick={(e) => handleNavClick(refs.projectsRef, e)}
+            >
+              Projects
+            </a>
           </li>
+
           <li>
-            <a href="#" onClick={() => handleNavClick(refs.skillsRef)}>Skills</a>
+            <a
+              href="/#skills"
+              onClick={(e) => handleNavClick(refs.skillsRef, e)}
+            >
+              Skills
+            </a>
           </li>
+
           <li>
-            <a href="#" onClick={() => handleNavClick(refs.resumeRef)}>Resume</a>
+            <a
+              href="/#resume"
+              onClick={(e) => handleNavClick(refs.resumeRef, e)}
+            >
+              Resume
+            </a>
           </li>
+
           <li>
-            <a href="#" onClick={() => handleNavClick(refs.contactRef)}>Contact</a>
+            <a
+              href="/#contact"
+              onClick={(e) => handleNavClick(refs.contactRef, e)}
+            >
+              Contact
+            </a>
           </li>
         </ul>
       </div>
